@@ -1,0 +1,21 @@
+name: Request_build_main
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Frends.Confluence.Request/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_main.yml@main
+    with:
+      workdir: Frends.Confluence.Request
+      env_var_name_1: CONFLUENCE_USERNAME
+      env_var_name_2: CONFLUENCE_API_TOKEN
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      env_var_value_1: ${{ secrets.CONFLUENCE_USERNAME }}
+      env_var_value_2: ${{ secrets.CONFLUENCE_API_TOKEN }}
