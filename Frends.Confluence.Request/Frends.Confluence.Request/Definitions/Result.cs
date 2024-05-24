@@ -1,11 +1,19 @@
-using System.Net;
-
 namespace Frends.Confluence.Request.Definitions;
 
-#pragma warning disable CS1591 // self explanatory
+/// <summary>
+/// Input parameters.
+/// </summary>
 public class Result
 {
-    public HttpStatusCode StatusCode { get; init; }
-    public string Content { get; init; }
+    /// <summary>
+    /// Returned status code.
+    /// </summary>
+    /// <example>200</example>
+    public int StatusCode { get; init; }
+
+    /// <summary>
+    /// Body of the response represented as JToken
+    /// </summary>
+    /// <example>{ "id": 123 }</example>
+    public dynamic Content { get; init; }
 }
-#pragma warning restore CS1591 // self explanatory

@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Net.Http;
-using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using dotenv.net;
 using Frends.Confluence.Request.Definitions;
+using Newtonsoft.Json.Linq;
 using static Frends.Confluence.Request.Definitions.Constants;
 
 namespace Frends.Confluence.Request.Tests;
@@ -70,8 +70,8 @@ public abstract class TestsBase
             CancellationToken.None
         );
 
-        var json = JsonNode.Parse(response.Content);
-        return json["id"].ToString();
+        JToken jToken = response.Content;
+        return jToken["id"].ToString();
     }
 
     private static async Task DeleteSpace()

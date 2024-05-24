@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net.Http;
 using static Frends.Confluence.Request.Definitions.Constants;
 
@@ -19,6 +20,7 @@ public class Input
     /// ApiToken used to connect to confluence with Basic Auth.
     /// </summary>
     /// <example>AKxDuOPvOWAb2g1-HtJmeqnlcztevlXMqDGtsNURL88=2C9A9D12</example>
+    [PasswordPropertyText]
     public string ApiToken { get; init; }
 
     /// <summary>
@@ -36,7 +38,7 @@ public class Input
     /// <summary>
     /// Confluence name
     /// </summary>
-    /// <example>frends-test</example>
+    /// <example>example-name</example>
     public string ConfluenceDomainName { get; init; }
 
     /// <summary>
@@ -53,7 +55,7 @@ public class Input
     /// <summary>
     /// Query parameters from which query string will be constructed.
     /// </summary>
-    /// <example>{ {page, 1}, {limit, 5}}</example>
+    /// <example>{ {page, 1}, {limit, 5} }</example>
     public Dictionary<string, string> QueryParameters { get; init; } =
         new Dictionary<string, string>();
 }

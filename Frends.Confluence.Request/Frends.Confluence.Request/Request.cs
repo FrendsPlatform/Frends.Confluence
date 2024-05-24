@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using Frends.Confluence.Request.Definitions;
+using Newtonsoft.Json.Linq;
 using static Frends.Confluence.Request.Definitions.Constants;
 
 namespace Frends.Confluence.Request;
@@ -36,12 +37,10 @@ public static class Confluence
             Content = content,
         };
         var response = await client.SendAsync(message, token);
+        var responseContent = await response.Content.ReadAsStringAsync(token);
+        var responseBody = JToken.Parse(responseContent);
 
-        return new Result
-        {
-            StatusCode = response.StatusCode,
-            Content = await response.Content.ReadAsStringAsync(token)
-        };
+        return new Result { StatusCode = (int)response.StatusCode, Content = responseBody };
     }
 
     private static HttpClient GetAuthorizedClient(Input input)

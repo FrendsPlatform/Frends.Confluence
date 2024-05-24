@@ -27,7 +27,7 @@ public class Tests : TestsBase
             },
             CancellationToken.None
         );
-        Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        Assert.AreEqual(200, result.StatusCode);
     }
 
     [TestMethod]
@@ -45,7 +45,7 @@ public class Tests : TestsBase
             },
             CancellationToken.None
         );
-        Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        Assert.AreEqual(200, result.StatusCode);
     }
 
     [TestMethod]
@@ -76,8 +76,8 @@ public class Tests : TestsBase
             },
             CancellationToken.None
         );
-        Assert.AreEqual(HttpStatusCode.OK, resultWithoutSlash.StatusCode);
-        Assert.AreEqual(HttpStatusCode.OK, resultWithSlash.StatusCode);
+        Assert.AreEqual(200, resultWithoutSlash.StatusCode);
+        Assert.AreEqual(200, resultWithSlash.StatusCode);
     }
 
     [TestMethod]
@@ -109,9 +109,9 @@ public class Tests : TestsBase
             },
             CancellationToken.None
         );
-        Assert.AreEqual(HttpStatusCode.OK, OnePageResult.StatusCode);
-        Assert.AreEqual(HttpStatusCode.OK, ManyPageResult.StatusCode);
-        Assert.IsTrue(OnePageResult.Content.Length < ManyPageResult.Content.Length);
+        Assert.AreEqual(200, OnePageResult.StatusCode);
+        Assert.AreEqual(200, ManyPageResult.StatusCode);
+        Assert.IsTrue(OnePageResult.Content.ToString().Length < ManyPageResult.Content.ToString().Length);
     }
 
     [TestMethod]
@@ -129,7 +129,7 @@ public class Tests : TestsBase
             },
             CancellationToken.None
         );
-        Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        Assert.AreEqual(200, result.StatusCode);
     }
 
     [TestMethod]
@@ -153,6 +153,6 @@ public class Tests : TestsBase
             },
             CancellationToken.None
         );
-        Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+        Assert.AreEqual(200, result.StatusCode);
     }
 }
