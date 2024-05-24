@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Frends.Confluence.Request.Definitions;
@@ -20,7 +18,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V1,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/audit"
@@ -38,7 +36,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages"
@@ -56,7 +54,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages"
@@ -69,7 +67,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "pages"
@@ -88,7 +86,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages",
@@ -102,7 +100,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages",
@@ -111,7 +109,9 @@ public class Tests : TestsBase
         );
         Assert.AreEqual(200, OnePageResult.StatusCode);
         Assert.AreEqual(200, ManyPageResult.StatusCode);
-        Assert.IsTrue(OnePageResult.Content.ToString().Length < ManyPageResult.Content.ToString().Length);
+        Assert.IsTrue(
+            OnePageResult.Content.ToString().Length < ManyPageResult.Content.ToString().Length
+        );
     }
 
     [TestMethod]
@@ -122,7 +122,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Get,
+                HttpMethod = Constants.HttpMethod.GET,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = $"/spaces/{WorkSpaceId}",
@@ -140,7 +140,7 @@ public class Tests : TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Post,
+                HttpMethod = Constants.HttpMethod.POST,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages",

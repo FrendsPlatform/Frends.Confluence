@@ -32,7 +32,7 @@ public static class Confluence
 
         var message = new HttpRequestMessage
         {
-            Method = input.HttpMethod,
+            Method = GetHttpMethod(input.HttpMethod),
             RequestUri = uri,
             Content = content,
         };

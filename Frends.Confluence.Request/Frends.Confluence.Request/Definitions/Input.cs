@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Net.Http;
 using static Frends.Confluence.Request.Definitions.Constants;
 
@@ -27,7 +28,7 @@ public class Input
     /// Define method of request.
     /// </summary>
     /// <example>HttpMethod.Get</example>
-    public HttpMethod HttpMethod { get; init; }
+    public Constants.HttpMethod HttpMethod { get; init; }
 
     /// <summary>
     /// Api version that will be used in a request.
@@ -50,6 +51,9 @@ public class Input
     /// <summary>
     /// Body content of a request if needed in a JsonF format.
     /// </summary>
+    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.POST)]
+    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.PUT)]
+    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.PATCH)]
     public string JsonBody { get; init; } = string.Empty;
 
     /// <summary>

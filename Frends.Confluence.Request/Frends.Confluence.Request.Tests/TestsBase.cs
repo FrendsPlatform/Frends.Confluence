@@ -57,7 +57,7 @@ public abstract class TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Post,
+                HttpMethod = Constants.HttpMethod.POST,
                 ApiVersion = ApiVersion.V1,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/space",
@@ -81,7 +81,7 @@ public abstract class TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Delete,
+                HttpMethod = Constants.HttpMethod.DELELTE,
                 ApiVersion = ApiVersion.V1,
                 ConfluenceDomainName = domainName,
                 OperationSufix = $"/space/{WorkSpaceKey}",
@@ -97,7 +97,7 @@ public abstract class TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = HttpMethod.Post,
+                HttpMethod = Constants.HttpMethod.POST,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages",
