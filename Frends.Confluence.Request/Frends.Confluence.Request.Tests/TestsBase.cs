@@ -63,8 +63,8 @@ public abstract class TestsBase
                 OperationSufix = "/space",
                 JsonBody =
                     $@"{{
-  ""key"": ""{WorkSpaceKey}"",
-  ""name"": ""Test-{Guid.NewGuid()}""
+    ""key"": ""{WorkSpaceKey}"",
+    ""name"": ""Test-{Guid.NewGuid()}""
 }}"
             },
             CancellationToken.None
@@ -103,8 +103,8 @@ public abstract class TestsBase
                 OperationSufix = "/pages",
                 JsonBody =
                     $@"{{
-  ""spaceId"": ""{WorkSpaceKey}"",
-  ""status"": ""current"",
+    ""spaceId"": ""{WorkSpaceKey}"",
+    ""status"": ""current"",
     ""spaceId"": ""Test-Page-{Guid.NewGuid()}""
 
 }}"

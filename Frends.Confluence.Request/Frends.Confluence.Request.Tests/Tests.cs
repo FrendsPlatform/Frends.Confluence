@@ -146,9 +146,9 @@ public class Tests : TestsBase
                 OperationSufix = "/pages",
                 JsonBody =
                     $@"{{
-  ""spaceId"": ""{WorkSpaceId}"",
-  ""status"": ""current"",
-  ""title"": ""NewTestingPage-{Guid.NewGuid()}""
+    ""spaceId"": ""{WorkSpaceId}"",
+    ""status"": ""current"",
+    ""title"": ""NewTestingPage-{Guid.NewGuid()}""
 }}"
             },
             CancellationToken.None
