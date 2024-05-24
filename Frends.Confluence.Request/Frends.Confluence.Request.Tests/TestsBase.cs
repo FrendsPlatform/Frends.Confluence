@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Net.Http;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using dotenv.net;
 using Frends.Confluence.Request.Definitions;
-using Newtonsoft.Json.Linq;
 using static Frends.Confluence.Request.Definitions.Constants;
 
 namespace Frends.Confluence.Request.Tests;
@@ -24,7 +24,7 @@ public abstract class TestsBase
     );
 
     protected static string WorkSpaceId { get; set; }
-    private static readonly string SpaceKey = "TEST";
+    private static readonly string WorkSpaceKey = "TEST";
 
     [AssemblyInitialize]
     public static async Task AssemblyInit(TestContext context)
@@ -52,8 +52,6 @@ public abstract class TestsBase
 
     private static async Task<string> CreateSpace()
     {
-        var guid = Guid.NewGuid();
-        var name = $"Test-{guid}";
         var response = await Confluence.Request(
             new Input
             {
@@ -65,14 +63,14 @@ public abstract class TestsBase
                 OperationSufix = "/space",
                 JsonBody =
                     $@"{{
-  ""key"": ""{SpaceKey}"",
-  ""name"": ""Test-{name}""
+  ""key"": ""{WorkSpaceKey}"",
+  ""name"": ""Test-{Guid.NewGuid()}""
 }}"
             },
             CancellationToken.None
         );
 
-        var json = JObject.Parse(response.Content);
+        var json = JsonNode.Parse(response.Content);
         return json["id"].ToString();
     }
 
@@ -86,7 +84,7 @@ public abstract class TestsBase
                 HttpMethod = HttpMethod.Delete,
                 ApiVersion = ApiVersion.V1,
                 ConfluenceDomainName = domainName,
-                OperationSufix = $"/space/{SpaceKey}",
+                OperationSufix = $"/space/{WorkSpaceKey}",
             },
             CancellationToken.None
         );
@@ -105,7 +103,7 @@ public abstract class TestsBase
                 OperationSufix = "/pages",
                 JsonBody =
                     $@"{{
-  ""spaceId"": ""{SpaceKey}"",
+  ""spaceId"": ""{WorkSpaceKey}"",
   ""status"": ""current"",
     ""spaceId"": ""Test-Page-{Guid.NewGuid()}""
 

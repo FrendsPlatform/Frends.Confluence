@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -124,7 +125,7 @@ public class Tests : TestsBase
                 HttpMethod = HttpMethod.Get,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
-                OperationSufix = "/pages/851970",
+                OperationSufix = $"/spaces/{WorkSpaceId}",
             },
             CancellationToken.None
         );
@@ -147,7 +148,7 @@ public class Tests : TestsBase
                     $@"{{
   ""spaceId"": ""{WorkSpaceId}"",
   ""status"": ""current"",
-  ""title"": ""NewTestingPage""
+  ""title"": ""NewTestingPage-{Guid.NewGuid()}""
 }}"
             },
             CancellationToken.None
