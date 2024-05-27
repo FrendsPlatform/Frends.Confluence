@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Confluence.Request", "Frends.Confluence.Request\Frends.Confluence.Request.csproj", "{EE8274C9-643C-4C2D-8F55-CAC0BF28C111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Confluence.Request.Tests", "Frends.Confluence.Request.Tests\Frends.Confluence.Request.Tests.csproj", "{9ACEBE1F-E2C5-4066-9D2F-1919C7A9B428}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE8274C9-643C-4C2D-8F55-CAC0BF28C111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8274C9-643C-4C2D-8F55-CAC0BF28C111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8274C9-643C-4C2D-8F55-CAC0BF28C111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8274C9-643C-4C2D-8F55-CAC0BF28C111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACEBE1F-E2C5-4066-9D2F-1919C7A9B428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACEBE1F-E2C5-4066-9D2F-1919C7A9B428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACEBE1F-E2C5-4066-9D2F-1919C7A9B428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACEBE1F-E2C5-4066-9D2F-1919C7A9B428}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
