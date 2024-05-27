@@ -51,9 +51,7 @@ public class Input
     /// <summary>
     /// Body content of a request if needed in a JsonF format.
     /// </summary>
-    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.POST)]
-    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.PUT)]
-    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.PATCH)]
+    [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.POST, Constants.HttpMethod.PUT, Constants.HttpMethod.PATCH)]
     public string JsonBody { get; init; } = string.Empty;
 
     /// <summary>
