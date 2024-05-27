@@ -11,7 +11,7 @@ public static class Constants
         POST = 2,
         PUT = 3,
         PATCH = 4,
-        DELELTE = 5
+        DELETE = 5
     }
 
     public static System.Net.Http.HttpMethod GetHttpMethod(HttpMethod method) =>
@@ -21,7 +21,7 @@ public static class Constants
             HttpMethod.POST => System.Net.Http.HttpMethod.Post,
             HttpMethod.PUT => System.Net.Http.HttpMethod.Put,
             HttpMethod.PATCH => System.Net.Http.HttpMethod.Patch,
-            HttpMethod.DELELTE => System.Net.Http.HttpMethod.Delete,
+            HttpMethod.DELETE => System.Net.Http.HttpMethod.Delete,
             _ => throw new InvalidEnumArgumentException("This http method is not supported")
         };
 

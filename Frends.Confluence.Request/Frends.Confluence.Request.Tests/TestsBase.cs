@@ -81,7 +81,7 @@ public abstract class TestsBase
             {
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = Constants.HttpMethod.DELELTE,
+                HttpMethod = Constants.HttpMethod.DELETE,
                 ApiVersion = ApiVersion.V1,
                 ConfluenceDomainName = domainName,
                 OperationSufix = $"/space/{WorkSpaceKey}",
