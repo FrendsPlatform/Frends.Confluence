@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ public abstract class TestsBase
 
     protected static string WorkSpaceId { get; set; }
     private static readonly string WorkSpaceKey = "TEST";
+    internal static string PageId { get; set; }
 
     [AssemblyInitialize]
     public static async Task AssemblyInit(TestContext context)
@@ -74,6 +76,7 @@ public abstract class TestsBase
         return jToken["id"].ToString();
     }
 
+
     private static async Task DeleteSpace()
     {
         await Confluence.Request(
@@ -92,24 +95,23 @@ public abstract class TestsBase
 
     private static async Task CreatePage(string spaceId, string pageName)
     {
-        await Confluence.Request(
+        var result = await Confluence.Request(
             new Input
             {
+                ConfluenceMethod = ConfluenceMethod.CreatePage,
                 Username = username,
                 ApiToken = apiToken,
-                HttpMethod = Constants.HttpMethod.POST,
                 ApiVersion = ApiVersion.V2,
                 ConfluenceDomainName = domainName,
-                OperationSufix = "/pages",
-                JsonBody =
-                    $@"{{
-    ""spaceId"": ""{WorkSpaceKey}"",
-    ""status"": ""current"",
-    ""spaceId"": ""Test-Page-{Guid.NewGuid()}""
-
-}}"
+                SpaceId = spaceId,
+                Title = pageName,
+                Body = "This is a new page created by the API"
             },
             CancellationToken.None
         );
+        if (result.StatusCode == 200 && result.Content is JObject jsonResponse && PageId == null)
+        {
+            PageId = jsonResponse["id"]?.ToString();
+        }
     }
 }
