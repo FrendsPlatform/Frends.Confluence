@@ -4,11 +4,11 @@
 
 ### Added
 
-- Added methodes: CreatePage, UpdatePage, GetPageById, DeletePage, GetPageByTitle, CreateSpace, DeleteSpace, GetSpaceByName.
+- Added methods: CreatePage, UpdatePage, GetPageById, DeletePage, GetPageByTitle, CreateSpace, DeleteSpace, GetSpaceByName.
 
 ### Changed
 
-- Changed Request method name for CustomRequest.
+- Changed Request method name to CustomRequest.
 
 ## [1.0.0] - 2024-05-21
 
