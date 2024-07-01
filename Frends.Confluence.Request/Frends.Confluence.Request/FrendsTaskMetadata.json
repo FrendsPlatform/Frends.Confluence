@@ -1,7 +1,7 @@
 {
     "Tasks": [
       {
-        "TaskMethod": "Frends.Confluence.RequestTest.Confluence.RequestTest"
+        "TaskMethod": "Frends.Confluence.Request.Confluence.Request"
       }
     ]
   }
