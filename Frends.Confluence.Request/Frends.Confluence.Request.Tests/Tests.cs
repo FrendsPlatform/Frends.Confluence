@@ -23,6 +23,7 @@ public class Tests : TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/audit"
             },
+            new Options(),
             CancellationToken.None
         );
         Assert.AreEqual(200, result.StatusCode);
@@ -41,6 +42,7 @@ public class Tests : TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages"
             },
+            new Options(),
             CancellationToken.None
         );
         Assert.AreEqual(200, result.StatusCode);
@@ -59,6 +61,7 @@ public class Tests : TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages"
             },
+            new Options(),
             CancellationToken.None
         );
 
@@ -72,6 +75,7 @@ public class Tests : TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = "pages"
             },
+            new Options(),
             CancellationToken.None
         );
         Assert.AreEqual(200, resultWithoutSlash.StatusCode);
@@ -92,6 +96,7 @@ public class Tests : TestsBase
                 OperationSufix = "/pages",
                 QueryParameters = new Dictionary<string, string> { { "limit", "1" } }
             },
+            new Options(),
             CancellationToken.None
         );
 
@@ -105,6 +110,7 @@ public class Tests : TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = "/pages",
             },
+            new Options(),
             CancellationToken.None
         );
         Assert.AreEqual(200, OnePageResult.StatusCode);
@@ -127,6 +133,7 @@ public class Tests : TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = $"/spaces/{WorkSpaceId}",
             },
+            new Options(),
             CancellationToken.None
         );
         Assert.AreEqual(200, result.StatusCode);
@@ -151,6 +158,7 @@ public class Tests : TestsBase
     ""title"": ""NewTestingPage-{Guid.NewGuid()}""
 }}"
             },
+            new Options(),
             CancellationToken.None
         );
         Assert.AreEqual(200, result.StatusCode);

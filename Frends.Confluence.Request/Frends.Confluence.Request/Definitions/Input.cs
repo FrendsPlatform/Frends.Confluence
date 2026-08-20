@@ -49,8 +49,9 @@ public class Input
     public string OperationSufix { get; init; }
 
     /// <summary>
-    /// Body content of a request if needed in a JsonF format.
+    /// Body content of a request if needed in a JSON format.
     /// </summary>
+    /// <example>{"title": "New Page", "status": "current"}</example>
     [UIHint(nameof(HttpMethod), "", Constants.HttpMethod.POST, Constants.HttpMethod.PUT, Constants.HttpMethod.PATCH)]
     public string JsonBody { get; init; } = string.Empty;
 
