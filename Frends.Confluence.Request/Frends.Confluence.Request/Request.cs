@@ -42,18 +42,7 @@ public static class Confluence
             };
             var response = await client.SendAsync(message, cancellationToken);
             var responseContent = await response.Content.ReadAsStringAsync(cancellationToken);
-
-            dynamic responseBody;
-            try
-            {
-                responseBody = string.IsNullOrWhiteSpace(responseContent)
-                    ? null
-                    : JToken.Parse(responseContent);
-            }
-            catch (Newtonsoft.Json.JsonReaderException)
-            {
-                responseBody = responseContent;
-            }
+            var responseBody = JToken.Parse(responseContent);
 
             return new Result { Success = true, StatusCode = (int)response.StatusCode, Content = responseBody };
         }
