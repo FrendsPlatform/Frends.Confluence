@@ -2,9 +2,14 @@ using System.ComponentModel;
 
 namespace Frends.Confluence.Request.Definitions;
 
-#pragma warning disable CS1591 // self explanatory
+/// <summary>
+/// Constants used by the Confluence request task.
+/// </summary>
 public static class Constants
 {
+    /// <summary>
+    /// HTTP method for the request.
+    /// </summary>
     public enum HttpMethod
     {
         GET = 1,
@@ -14,6 +19,9 @@ public static class Constants
         DELETE = 5
     }
 
+    /// <summary>
+    /// Converts a Constants.HttpMethod to a System.Net.Http.HttpMethod.
+    /// </summary>
     public static System.Net.Http.HttpMethod GetHttpMethod(HttpMethod method) =>
         method switch
         {
@@ -25,13 +33,22 @@ public static class Constants
             _ => throw new InvalidEnumArgumentException("This http method is not supported")
         };
 
+    /// <summary>
+    /// Confluence API version.
+    /// </summary>
     public enum ApiVersion
     {
         V1 = 1,
         V2 = 2
     }
 
+    /// <summary>
+    /// URI path for Confluence REST API v1.
+    /// </summary>
     public const string ApiV1Uri = "/wiki/rest/api/";
+
+    /// <summary>
+    /// URI path for Confluence API v2.
+    /// </summary>
     public const string ApiV2Uri = "/wiki/api/v2/";
 }
-#pragma warning restore CS1591 // self explanatory

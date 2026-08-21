@@ -67,6 +67,7 @@ public abstract class TestsBase
     ""name"": ""Test-{Guid.NewGuid()}""
 }}"
             },
+            new Options(),
             CancellationToken.None
         );
 
@@ -86,6 +87,7 @@ public abstract class TestsBase
                 ConfluenceDomainName = domainName,
                 OperationSufix = $"/space/{WorkSpaceKey}",
             },
+            new Options(),
             CancellationToken.None
         );
     }
@@ -109,6 +111,7 @@ public abstract class TestsBase
 
 }}"
             },
+            new Options(),
             CancellationToken.None
         );
     }
